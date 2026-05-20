@@ -1,0 +1,24 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+.vscode/
+*.log
+
+## Secrets
+appsettings.Production.json
+**/secrets.json
+
+## Build output
+/publish/
+/out/
+
+## Docker
+.dockerignore
+
+## OS
+.DS_Store
+Thumbs.db
+tests
