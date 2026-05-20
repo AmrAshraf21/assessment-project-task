@@ -35,7 +35,6 @@ TaskManagement/
 | **API Versioning** | URL segment versioning (`/api/v1/...`), header versioning supported |
 | **Redis Caching** | Projects and tasks cached, invalidated on mutations |
 | **Docker** | Dockerfile + docker-compose with SQL Server + Redis |
-| **Unit Tests** | Auth, Project, and Task handlers fully tested |
 | **EF Core Migrations** | Migration files included, auto-applied on startup |
 
 ---
@@ -98,14 +97,7 @@ This starts:
 
 ---
 
-## Run Tests
 
-```bash
-cd tests/TaskManagement.Tests
-dotnet test
-```
-
----
 
 ## API Reference
 
@@ -216,7 +208,7 @@ src/TaskManagement.API/
 │   ├── AuthController.cs
 │   ├── ProjectsController.cs
 │   └── TasksController.cs
-├── Extensions/SwaggerExtensions.cs
+├── Extensions/ApiVersioningExtensions.cs
 ├── Middleware/GlobalExceptionHandlingMiddleware.cs
 ├── Program.cs
 ├── appsettings.json
