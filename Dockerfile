@@ -12,11 +12,11 @@ COPY . .
 
 RUN dotnet build "src/TaskManagement.API/TaskManagement.API.csproj" -c Release -o /app/build
 
-# ── Publish Stage ─────────────────────────────────────────────────────────────
+# ── Publish Stage 
 FROM build AS publish
 RUN dotnet publish "src/TaskManagement.API/TaskManagement.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
-# ── Runtime Stage ─────────────────────────────────────────────────────────────
+# ── Runtime Stage 
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
 WORKDIR /app
 
