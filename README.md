@@ -94,6 +94,7 @@ This starts:
 - **API** on `http://localhost:5000`
 - **SQL Server** on `localhost:1433`
 - **Redis** on `localhost:6379`
+- Run the `docker-compose.dev.yml` only for testing redis in 
 
 ---
 
