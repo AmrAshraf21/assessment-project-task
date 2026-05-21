@@ -8,7 +8,7 @@ using TaskManagement.Domain.Enums;
 
 namespace TaskManagement.Application.Features.Tasks.Queries;
 
-// ── DTOs ──────────────────────────────────────────────────────────────────────
+// ── DTOs 
 
 public record TaskDto(
     Guid Id,
@@ -21,7 +21,7 @@ public record TaskDto(
     DateTime CreatedAt
 );
 
-// ── Get Tasks By Project ──────────────────────────────────────────────────────
+// ── Get Tasks By Project 
 
 public record GetTasksByProjectQuery(
     Guid ProjectId,
@@ -46,7 +46,6 @@ public class GetTasksByProjectQueryHandler
 
     public async Task<ApiResponse<PagedResult<TaskDto>>> Handle(GetTasksByProjectQuery request, CancellationToken cancellationToken)
     {
-        // Ensure project belongs to user
         var projectExists = await _context.Projects
             .AnyAsync(p => p.Id == request.ProjectId && p.UserId == _currentUser.UserId!.Value, cancellationToken);
 

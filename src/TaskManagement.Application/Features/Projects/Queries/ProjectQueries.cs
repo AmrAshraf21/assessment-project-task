@@ -8,7 +8,7 @@ using TaskManagement.Domain.Entities;
 
 namespace TaskManagement.Application.Features.Projects.Queries;
 
-// ── DTOs ──────────────────────────────────────────────────────────────────────
+// ── DTOs 
 
 public record ProjectDto(
     Guid Id,
@@ -18,7 +18,7 @@ public record ProjectDto(
     int TaskCount
 );
 
-// ── Get All Projects ──────────────────────────────────────────────────────────
+// ── Get All Projects 
 
 public record GetAllProjectsQuery(int Page = 1, int PageSize = 10)
     : IRequest<ApiResponse<PagedResult<ProjectDto>>>;
@@ -71,8 +71,7 @@ public class GetAllProjectsQueryHandler
     }
 }
 
-// ── Get Project By Id ─────────────────────────────────────────────────────────
-
+// ── Get Project By Id 
 public record GetProjectByIdQuery(Guid Id) : IRequest<ApiResponse<ProjectDto>>;
 
 public class GetProjectByIdQueryHandler : IRequestHandler<GetProjectByIdQuery, ApiResponse<ProjectDto>>

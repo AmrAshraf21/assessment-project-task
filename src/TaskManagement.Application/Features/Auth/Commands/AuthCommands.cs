@@ -9,7 +9,7 @@ using TaskManagement.Domain.Enums;
 
 namespace TaskManagement.Application.Features.Auth.Commands;
 
-// ── DTOs ──────────────────────────────────────────────────────────────────────
+// ── DTOs 
 
 public record AuthResponse(
     string Token,
@@ -19,7 +19,7 @@ public record AuthResponse(
     string Role
 );
 
-// ── Register ──────────────────────────────────────────────────────────────────
+// ── Register
 
 public record RegisterCommand(
     string Email,
@@ -80,7 +80,7 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, ApiRespon
     }
 }
 
-// ── Login ─────────────────────────────────────────────────────────────────────
+// ── Login 
 
 public record LoginCommand(string Email, string Password) : IRequest<ApiResponse<AuthResponse>>;
 

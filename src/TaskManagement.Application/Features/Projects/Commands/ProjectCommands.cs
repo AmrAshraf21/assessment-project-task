@@ -9,8 +9,7 @@ using TaskManagement.Domain.Entities;
 
 namespace TaskManagement.Application.Features.Projects.Commands;
 
-// ── Create Project ────────────────────────────────────────────────────────────
-
+// ── Create Project
 public record CreateProjectCommand(string Name, string Description) : IRequest<ApiResponse<ProjectDto>>;
 
 public class CreateProjectCommandValidator : AbstractValidator<CreateProjectCommand>
@@ -54,7 +53,7 @@ public class CreateProjectCommandHandler : IRequestHandler<CreateProjectCommand,
     }
 }
 
-// ── Update Project ────────────────────────────────────────────────────────────
+// ── Update Project 
 
 public record UpdateProjectCommand(Guid Id, string Name, string Description) : IRequest<ApiResponse<ProjectDto>>;
 
@@ -100,8 +99,7 @@ public class UpdateProjectCommandHandler : IRequestHandler<UpdateProjectCommand,
     }
 }
 
-// ── Delete Project ────────────────────────────────────────────────────────────
-
+// ── Delete Project 
 public record DeleteProjectCommand(Guid Id) : IRequest<ApiResponse<bool>>;
 
 public class DeleteProjectCommandHandler : IRequestHandler<DeleteProjectCommand, ApiResponse<bool>>
